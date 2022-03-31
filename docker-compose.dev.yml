@@ -9,5 +9,12 @@ services:
       - ./:/app
       - /app/node_modules
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=development,
+      - MONGO_USER=mizan,
+      - MONGO_PASSWORD=mizan
     command: npm run dev
+  mongo: 
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mizan
+      - MONGO_INITDB_ROOT_PASSWORD=mizan
